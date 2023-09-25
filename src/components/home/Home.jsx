@@ -217,6 +217,7 @@ export default function Home() {
                         handleLoginForm={handleLoginForm}
                         handleLoading={handleLoading}
                         setIsUser={setIsUser}
+                        login={login}
                     />
                 </div>
             }

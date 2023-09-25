@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './style.css'
 import axios from 'axios'
 
-export default function Signup({ handleSignup, handleLoginForm, setIsUser }) {
+export default function Signup({ handleSignup, handleLoginForm, setIsUser,login }) {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -21,9 +21,9 @@ export default function Signup({ handleSignup, handleLoginForm, setIsUser }) {
       setIsUser(true)
       const token = response.data.authToken
       localStorage.setItem('auth-token', token)
+      login(token)
     }
 
-    console.log({ resFromSignup: response, token });
   }
   return (
     <>
